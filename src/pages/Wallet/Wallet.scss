@@ -1,0 +1,346 @@
+// Paleta de cores
+$primary-color: #2c3e50;           // Cor do cabeçalho e elementos principais
+$secondary-color: #ecf0f1;         // Cor de fundo suave
+$highlight-color: #f39c12;         // Cor de destaque para botões ou elementos importantes
+$white-color: #fff;                // Cor de fundo para a maioria dos elementos
+$table-border-color: #ddd;         // Cor das bordas das células
+$hover-color: #f4f4f4;             // Cor para hover em elementos
+$text-color: #333;                 // Cor padrão do texto
+$disabled-color: #ccc;             // Cor para elementos desabilitados
+$button-bg-color: #3498db;         // Cor de fundo dos botões
+$button-hover-color: #2980b9;      // Cor dos botões ao passar o mouse
+$input-bg-color: #fff;             // Cor de fundo dos inputs
+
+// Layout e dimensões
+$max-width: 1200px;
+$padding-global: 16px;
+$gap-global: 24px;
+
+// Tipografia
+$font-family: 'Arial', sans-serif;
+
+// Reset e estilos globais
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-image: url('/1d09c4fb39f4ada83fc427e2df8cf8c5.png');
+  font-family: $font-family;
+  color: $text-color;
+  line-height: 1.3;
+  padding: $padding-global;
+  width: 100%;
+  min-height: 100vh;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); // Sobrepor a imagem com um filtro escuro
+    z-index: -1;
+  }
+}
+
+// Layout principal da carteira
+.wallet-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: auto;
+  padding: $padding-global;
+  background-color: #2e243d;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 10;
+  min-height: 30vh;
+  
+  @media (max-width: 768px) {
+    padding: $padding-global;
+  }
+}
+
+
+// Seção do Header
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+  background-color: $primary-color;
+  padding: $padding-global;
+  color: $white-color;
+  font-family: $font-family;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5%;
+  z-index: 5;
+  overflow: hidden;
+
+  img {
+    width: 40px;
+    height: auto;
+    margin-right: $gap-global;
+  }
+
+  .email {
+    font-size: 0.7em;
+    font-weight: bold;
+    color: $secondary-color;
+    padding-right: 5px;
+  }
+
+  .total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $highlight-color;
+    padding: 0 7px 0 3px;
+  }
+
+  .currency {
+    font-size: 0.6em;
+    color: $secondary-color;
+  }
+  
+  // Responsividade para o Header
+  @media (max-width: 768px) {
+    .App-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $padding-global;
+
+      img {
+        margin-right: 0;
+        margin-bottom: $padding-global;
+      }
+
+      .email,
+      .total,
+      .currency {
+        font-size: 0.9em;
+      }
+
+      .total {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+// Seção do Formulário
+
+#form-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: $gap-global 0;
+  background-color: $primary-color;
+  border-radius: 2%;
+  font-size: 0.9em;
+}
+#form-main {
+  padding: 20px;
+
+  button {
+    width: auto;
+    height: auto;
+    background-color: $button-bg-color;
+    color: $white-color;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+  }
+
+  .form-section {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: $padding-global;
+    background-color: #b14456c7;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+    label {
+      font-size: 1em;
+      color: $white-color;
+      margin-bottom: $padding-global;
+      display: block;
+    }
+  
+    input,
+    select {
+      width: 100%;
+      padding: $padding-global;
+      font-size: 1em;
+      margin-bottom: $gap-global;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: $white-color;
+  
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+  
+    button {
+      width: 100%;
+      background-color: $primary-color;
+      color: $white-color;
+      border: none;
+      padding: $padding-global;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+  
+      &:disabled {
+        background-color: $disabled-color;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Responsividade para o Formulário
+  @media (max-width: 768px) {
+    .form-section {
+      max-width: 100%;
+      padding: $padding-global;
+    }
+
+    input,
+    select {
+      font-size: 0.9em;
+    }
+
+    button {
+      font-size: 1em;
+    }
+  }
+}
+
+
+// Seção da Tabela
+.table-section {
+  margin: 2px;
+  padding: 29px;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: $font-family;
+  text-align: center;
+  z-index: 5;
+
+  overflow-x: auto;
+
+  span {
+    display: block;
+    font-size: 1.2em;
+    color: $highlight-color;
+    margin-top: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $white-color;
+    font-size: 0.8em;
+
+    thead {
+      background-color: $primary-color;
+      color: $white-color;
+
+      th {
+        padding: 12px;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: bold;
+        border-bottom: 2px solid $table-border-color;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: $hover-color;
+        }
+
+        &:hover {
+          background-color:lighten($hover-color, 10%);
+        }
+
+        td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid $table-border-color;
+          color: $text-color;
+        }
+      }
+    }
+
+    button {
+      background-color: $button-bg-color;
+      color: $white-color;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $button-hover-color;
+      }
+
+      &#delete-btn {
+        background-color: $highlight-color;
+        &:hover {
+          background-color: darken($highlight-color, 10%);
+        }
+      }
+    }
+  }
+
+  // Responsividade para a Tabela
+  @media (max-width: 768px) {
+    .table-section {
+      padding: 15px;
+
+      table {
+        font-size: 0.5em;
+
+        th,
+        td {
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

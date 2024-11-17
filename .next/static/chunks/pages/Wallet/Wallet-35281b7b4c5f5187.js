@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[669],{6140:(_,e,n)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/Wallet/Wallet",function(){return n(11)}])}},_=>{var e=e=>_(_.s=e);_.O(0,[636,593,792],()=>e(6140)),_N_E=_.O()}]);
