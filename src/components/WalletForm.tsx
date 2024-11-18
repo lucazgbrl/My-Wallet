@@ -21,6 +21,17 @@ function WalletForm({ editingExpense, setEditingExpense }: WalletFormProps) {
   const [showForm, setShowForm] = useState(false); // Controla a visibilidade
   const dispatch: Dispatch = useDispatch();
 
+  const simpleInputs = [
+    { name: 'value', label: 'Valor' },
+    { name: 'description', label: 'Descrição' },
+  ];
+
+  const selectInputs = [
+    { name: 'method', label: 'Método de pagamento', options: ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'] },
+    { name: 'tag', label: 'Categoria', options: ['Alimentação', 'Lazer', 'Trabalho', 'Transporte'] },
+  ]
+
+
   const currencies = useSelector((state: RootState) => state.wallet.currencies);
 
   // Atualiza o formulário no modo de edição
@@ -76,19 +87,38 @@ function WalletForm({ editingExpense, setEditingExpense }: WalletFormProps) {
       ) : (
         <section className="form-section">
           <form className="expForm" onSubmit={ handleSubmit }>
-            {['value', 'description'].map((field) => (
-              <label key={ field } htmlFor={ field }>
-                {field === 'value' ? 'Valor:' : 'Descrição:'}
+            {simpleInputs.map((input) => (
+              <label key={ input.name } htmlFor={ input.name }>
+                {input.label}:
                 <input
-                  type={ field === 'value' ? 'number' : 'text' }
-                  name={ field }
-                  id={ field }
-                  data-testid={ `${field}-input` }
-                  value={ form[field as keyof FormState] }
+                  type={ input.name === 'value' ? 'number' : 'text' }
+                  name={ input.name }
+                  id={ input.name }
+                  data-testid={ `${input.name}-input` }
+                  value={ form[input.name as keyof FormState] }
                   onChange={ handleChange }
                 />
               </label>
             ))}
+            {selectInputs.map((input) => (
+              <label key={ input.name } htmlFor={ input.name }>
+                {input.label}:
+                <select
+                  name={ input.name }
+                  id={ input.name }
+                  data-testid={ `${input.name}-input` }
+                  value={ form[input.name as keyof FormState] }
+                  onChange={ handleChange }
+                >
+                  {input.options.map((option) => (
+                    <option key={ option } value={ option }>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ))}
+            {/* Campo de seleção de moeda */}
             <label htmlFor="currency">
               Moeda:
               <select

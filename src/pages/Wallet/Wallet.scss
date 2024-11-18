@@ -1,15 +1,15 @@
-// Paleta de cores
-$primary-color: #2c3e50;           // Cor do cabeçalho e elementos principais
-$secondary-color: #ecf0f1;         // Cor de fundo suave
-$highlight-color: #f39c12;         // Cor de destaque para botões ou elementos importantes
-$white-color: #fff;                // Cor de fundo para a maioria dos elementos
-$table-border-color: #ddd;         // Cor das bordas das células
-$hover-color: #f4f4f4;             // Cor para hover em elementos
-$text-color: #333;                 // Cor padrão do texto
-$disabled-color: #ccc;             // Cor para elementos desabilitados
-$button-bg-color: #3498db;         // Cor de fundo dos botões
-$button-hover-color: #2980b9;      // Cor dos botões ao passar o mouse
-$input-bg-color: #fff;             // Cor de fundo dos inputs
+$primary-color: #1f2937;           // Azul-cinza escuro para cabeçalhos e elementos principais
+$secondary-color: #f9fafb;         // Cinza quase branco para o fundo principal
+$highlight-color: #10b981;         // Verde esmeralda para elementos de destaque
+$white-color: #ffffff;             // Branco puro
+$table-border-color: #d1d5db;      // Cinza claro para bordas de tabelas
+$hover-color: #e5e7eb;             // Cinza suave para hover em elementos
+$text-color: #111827;              // Cinza muito escuro para texto principal
+$disabled-color: #9ca3af;          // Cinza médio para elementos desabilitados
+$button-bg-color: #3b82f6;         // Azul vibrante para botões
+$button-hover-color: #2563eb;      // Azul mais escuro para hover nos botões
+$input-bg-color: #f9fafb;          // Fundo de inputs, combinando com o fundo geral
+
 
 // Layout e dimensões
 $max-width: 1200px;
@@ -96,7 +96,7 @@ body {
   }
 
   .email {
-    font-size: 0.7em;
+    font-size: 1em;
     font-weight: bold;
     color: $secondary-color;
     padding-right: 5px;
@@ -110,7 +110,7 @@ body {
   }
 
   .currency {
-    font-size: 0.6em;
+    font-size: 0.8em;
     color: $secondary-color;
   }
   

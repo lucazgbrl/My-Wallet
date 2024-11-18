@@ -1,15 +1,15 @@
-// Paleta de cores
-$primary-color: #2c3e50;
-$secondary-color: #ecf0f1;
-$highlight-color: #f39c12;
-$white-color: #fff;
-$disabled-color: #ccc;
-$button-bg-color: #3498db;
-$button-hover-color: #2980b9;
-$text-color: #333;
-$input-bg-color: $white-color;
-$input-border-color: #ccc;
-$input-focus-border-color: $primary-color;
+$primary-color: #1f2937;           // Azul-cinza escuro, elegante e profissional
+$secondary-color: #f3f4f6;         // Cinza claro, sutil e suave para fundos
+$highlight-color: #10b981;         // Verde esmeralda vibrante para destaques
+$white-color: #ffffff;             // Branco puro para áreas de fundo
+$disabled-color: #9ca3af;          // Cinza médio para elementos desativados
+$button-bg-color: #3b82f6;         // Azul vibrante para botões primários
+$button-hover-color: #2563eb;      // Azul mais profundo para estado de hover
+$text-color: #111827;              // Cinza muito escuro, melhorando a legibilidade
+$input-bg-color: #f9fafb;          // Fundo claro e neutro para inputs
+$input-border-color: #d1d5db;      // Cinza suave para bordas de inputs
+$input-focus-border-color: #2563eb; // Azul profundo, coerente com o hover de botões
+
 
 // Estilos para o layout do Login
 .login-main {
