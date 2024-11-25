@@ -2,7 +2,7 @@ import { ActionTypes } from '../actions';
 import { Expense } from '../../types';
 
 // Defina a estrutura do estado
-interface WalletState {
+export interface WalletState {
   isFetching: boolean;
   currencies: string[];
   expenses: Expense[];
